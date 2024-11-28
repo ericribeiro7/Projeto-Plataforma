@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil</title>
+    <link rel="stylesheet" href="csstelap.css">
+    <link rel="stylesheet" href="overlay.css">
+    <link rel="stylesheet" href="formulariodoa.css">
+    <link rel="stylesheet" href="est.css">
+    <script src="server.js"></script>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    <div id="content">
+        <div class="sidebar">
+            <div class="logo">
+                <a href="telaprincipal.html"><img src="imagens/logo.png" alt=""></a>
+            </div>
+            <div class="icons">
+                <div class="icon-item">
+                    <i class='bx bxs-home'></i>
+                    <p style="color: #fff;"><a href="telaprincipal.html">Início</a></p>
+                </div>
+                <div class="icon-item">
+                    <i class='bx bx-edit'></i>
+                    <p style="color: #ffffff;"><a href="doacao.html">Criar Demanda</a></p>
+                </div>
+                <div class="icon-item">
+                    <i class='bx bxs-user-plus'></i>
+                    <p style="color: #fff;"><a href="convite.html">Convidar Pessoas</a></p>
+                </div>
+            </div>
+        </div>
+        <div class="header">
+            <div class="icns">
+                <i class='bx bxs-wallet'></i>
+                <i class='bx bxs-bell'></i>
+            </div>
+            <div class="botton" onclick="toggleOverlay()">
+                <h1>PERFIL</h1>
+                <img src="perfil.png" alt="">
+            </div>
+        </div>
+
+        <div id="overlay" class="overlay" onclick="closeOverlay(event)">
+            <div class="container" onclick="event.stopPropagation()">
+                <div class="foto">
+                    <img src="perfil.png" alt="">
+                    <p>EricRibeiro</p>
+                </div>
+                <div class="perfil">
+                    <i class='bx bxs-user'></i>
+                    <p><a href="perfil.html">Perfil</a></p>
+                </div>
+                <div class="icons1">
+                    <div>
+                        <i class='bx bx-edit'></i>
+                        <p><a href="doacao.html">Criar Nova Demanda</a></p>
+                    </div>
+                    <div>
+                        <i class='bx bxs-heart'></i>
+                        <p><a href="historico.html">Histórico de Doações</a></p>
+                    </div>
+                    <div>
+                        <i class='bx bxs-wallet'></i>
+                        <p><a href="">Meus Pontos</a></p>
+                    </div>
+                </div>
+                <div class="config">
+                    <div>
+                        <i class='bx bxs-cog'></i>
+                        <p><a href="">Configurações</a></p>
+                    </div>
+                    <div>
+                        <i class='bx bxs-user-plus'></i>
+                        <p><a href="convite.html">Convidar Pessoas</a></p>
+                    </div>
+                    <div>
+                        <i class='bx bxs-help-circle'></i>
+                        <p><a href="">Ajuda</a></p>
+                    </div>
+                </div>
+                <div class="exit">
+                    <i class='bx bxs-exit'></i>
+                    <p><a href="#" id="logoutLink">Sair</a></p>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+    <div class="cont">
+        <div class="profile-card">
+            <div class="profile-header">
+                <img src="picture-profile-icon-male-icon-human-or-people-sign-and-symbol-free-vector.jpg" alt="Foto de Perfil" class="profile-img">
+            </div>
+            <button class="change-photo-btn">Change Photo</button>
+            <div class="links">
+                <h3>LINKS RÁPIDOS</h3>
+                <ul>
+                    <li><a href="telaprincipal.html">Página Principal</a></li>
+                    <li><a href="doacao.html">Criar Demanda</a></li>
+                    <li><a href="ongs.html">Lista de Ong's</a></li>
+                </ul>
+                <h3>MEUS LINKS</h3>
+                <ul>
+                    <li><a href="historico.html">Histórico</a></li>
+                    <li><a href="#">Meus Pontos</a></li>
+                    <li><a href="#">Configurações</a></li>
+                    <li><a href="convite.html">Convidar Pessoas</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="info-card">
+            <h2>Nome</h2>
+            <div class="tabs">
+                <button class="tab active">Informações</button>
+            </div>
+            <form class="info-form">
+                <div class="form-group">
+                    <label for="nome">Nome</label>
+                    <input type="text" id="nome">
+                </div>
+                <div class="form-group">
+                    <label for="sobrenome">SobreNome</label>
+                    <input type="text" id="sobrenome">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email">
+                </div>
+                <div class="form-group">
+                    <label for="telefone">Telefone</label>
+                    <input type="tel" id="telefone">
+                </div>
+                <div class="form-group">
+                    <label for="endereco">Endereço</label>
+                    <input type="text" id="endereco">
+                </div>
+                <button type="submit" class="save-btn">SALVAR</button>
+            </form>
+        </div>
+    </div>
+    <script>
+        function toggleOverlay() {
+            const overlay = document.getElementById('overlay');
+            overlay.style.display = overlay.style.display === 'block' ? 'none' : 'block';
+            positionOverlay();
+        }
+    
+        function closeOverlay(event) {
+            const overlay = document.getElementById('overlay');
+            if (event.target === overlay) {
+                overlay.style.display = 'none';
+            }
+        }
+    
+        function positionOverlay() {
+            const botton = document.querySelector('.botton');
+            const overlay = document.getElementById('overlay');
+            const rect = botton.getBoundingClientRect();
+            const offsetLeft = -200;
+            overlay.style.top = `${rect.bottom}px`; /* Calcula em relação à viewport */
+            overlay.style.left = `${rect.left + offsetLeft}px`;
+            overlay.style.width = `${rect.width}px`;
+        }
+    
+        window.addEventListener('load', positionOverlay);
+        window.addEventListener('resize', positionOverlay);
+    </script>
+    <script>
+    document.getElementById("logoutLink").addEventListener("click", function(event) {
+        event.preventDefault(); // Previne o comportamento padrão do link
+        
+        // Exibe a tela de carregamento
+        document.getElementById("loadingScreen").style.display = "block";
+        
+        // Redireciona para a página index.html após um tempo
+        setTimeout(function() {
+            window.location.href = "../site/index.html"; // Substitua pelo caminho correto se necessário
+        }, 2000); // Tempo de espera em milissegundos (2000ms = 2s)
+    });
+</script>
+<script>
+    document.querySelector('.info-form').addEventListener('submit', async (event) => {
+        event.preventDefault(); // Evita o envio padrão do formulário
+    
+        // Captura os valores dos campos
+        const formData = {
+            nome: document.getElementById('nome').value.trim(),
+            sobrenome: document.getElementById('sobrenome').value.trim(),
+            email: document.getElementById('email').value.trim(),
+            telefone: document.getElementById('telefone').value.trim(),
+            endereco: document.getElementById('endereco').value.trim()
+        };
+    
+        // Validação simples para garantir que os campos não estejam vazios
+        if (!formData.nome || !formData.sobrenome || !formData.email || !formData.telefone || !formData.endereco) {
+            alert('Por favor, preencha todos os campos.');
+            return;
+        }
+    
+        try {
+            // Envia a solicitação POST ao servidor
+            const response = await fetch('/salvarPerfil', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(formData)
+            });
+    
+            if (response.ok) {
+                alert('Perfil atualizado com sucesso!');
+            } else {
+                alert('Erro ao atualizar o perfil. Tente novamente mais tarde.');
+            }
+        } catch (error) {
+            console.error('Erro:', error);
+            alert('Erro ao enviar dados para o servidor. Verifique sua conexão.');
+        }
+    });    
+</script>
+</body>
+</html>

@@ -1,0 +1,452 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #101010;
+    display: flex;
+    height: 100vh;
+}
+
+
+
+h1,
+p {
+    font-family: 'Poppins', sans-serif;
+}
+
+.sidebar {
+    width: 4%;
+    height: 100vh;
+    background-color: #101010;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 20px;
+    border-right: 1px solid #dadada6c;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 1001;
+}
+
+.sidebar p {
+    color: #dadada6c;
+}
+
+.logo img {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.icons {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding-top: 30px;
+}
+
+.icon-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}
+
+.icons i {
+    font-size: 24px;
+    color: #fff;
+    cursor: pointer;
+}
+
+.icons a {
+    color: #fff;
+    font-size: 12px;
+    text-align: center;
+    margin: 0;
+    text-decoration: none;
+}
+
+.icons p{
+    text-align: center;
+}
+.perfil{
+    cursor: pointer;
+}
+
+.header {
+    width: 100%;
+    height: 85px;
+    background-color: #101010;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-right: 20px;
+    border-bottom: 1px solid #dadada6c;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+.icns {
+    display: flex;
+    gap: 20px;
+    padding-right: 30px;
+}
+
+.icns i {
+    font-size: 24px;
+    color: #fff;
+    cursor: pointer;
+}
+
+.botton {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 5px 15px;
+    background-color: #282828;
+    border-radius: 30px;
+    cursor: pointer;
+    color: #fff;
+}
+
+.botton h1 {
+    font-size: 16px;
+    margin: 0;
+}
+
+.botton img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.home {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    padding-left: 10%;
+    padding-top: 85px;
+}
+
+.doacao,
+.ongs {
+    background-color: #282828;
+    width: 800px;
+    height: 800px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 20px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    cursor: pointer;
+}
+
+.doacao {
+    background-image: url(imagens/DEMANDA-DOAÇÃO.png);
+    text-align: center;
+    color: #fff;
+}
+
+.ongs {
+    background-image: url(imagens/ongs.png);
+    text-align: center;
+    color: #fff;
+}
+
+.doacao h1 {
+    font-weight: 700;
+    font-size: 45px;
+    margin-bottom: 10px;
+}
+
+.doacao p {
+    font-size: 14px;
+    margin-bottom: 10px; 
+}
+
+.ongs h1 {
+    font-weight: 700;
+    font-size: 45px;
+    margin-bottom: 10px;
+}
+
+.ongs p {
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.botao {
+    background-color: #282828;
+    color: #fff;
+    border: none;
+    padding: 10px 25px;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease;
+    margin-bottom: 10px;
+}
+
+.botao:hover {
+    background-color: #000;
+}
+
+.container {
+    width: 100%;
+    height: 100%;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-top: 100px;
+}
+
+.container .foto {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container .foto img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+.container .foto p {
+    color: #fff;
+    font-size: 20px;
+}
+
+.container .botton,
+.container .icons1,
+.container .config,
+.container .exit {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.container .botton i,
+.container .icons1 i,
+.container .config i,
+.container .exit i {
+    font-size: 24px;
+    color: #fff;
+    cursor: pointer;
+}
+
+.container .botton p,
+.container .icons1 p,
+.container .config p,
+.container .exit p {
+    color: #fff;
+    font-size: 16px;
+    margin-top: 5px;
+}
+
+.overlay {
+    position: absolute;
+    width: 100%;
+    display: none; 
+    z-index: 1002;
+}
+
+.politica {
+    display: flex;
+    width: 100%;
+    padding-left: 12%;
+    gap: 350px;
+    bottom: 0;
+    margin-top: 50px;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.column h2 {
+    color: #fff;
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.column ul {
+    list-style-type: none;
+}
+
+.column li {
+    margin-bottom: 5px;
+}
+
+.column a {
+    color: #dadada6c;
+    text-decoration: none;
+}
+
+.column a:hover {
+    text-decoration: underline;
+}
+
+footer{
+    background-color: #101010;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+    margin-top: 30px;
+    min-height: 5vh;
+    width: 105%;
+}
+
+.footer2{
+    float: right;
+    color: #8b8982;
+}
+
+/* Responsividade */
+@media (max-width: 1200px) {
+    .home {
+        padding-left: 5%;
+        justify-content: center;
+    }
+
+    .doacao,
+    .ongs {
+        width: 700px;
+        height: 700px;
+    }
+
+    .politica{
+        gap: 0;
+    }
+}
+
+@media (max-width: 990px) {
+    .sidebar {
+        width: 6%;
+    }
+
+    .home
+     {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin-right: 180px;
+    }
+
+    .doacao,
+    .ongs {
+        width: 90%;
+        height: 500px;
+    }
+
+    .header {
+        height: 70px;
+    }
+
+    .botton img {
+        width: 35px;
+        height: 35px;
+    }
+}
+
+@media (max-width: 800px) {
+    .sidebar {
+        width: 8%;
+    }
+
+    .home,
+    .politica {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .doacao,
+    .ongs {
+        width: 400px;
+        height: 400px;
+    }
+
+    .politica{
+        flex-direction: row;
+    }
+}
+
+@media (max-width: 480px) {
+    .sidebar {
+        width: 12%;
+    }
+
+    .home,
+    .politica {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin-right: 100px;
+    }
+
+    .doacao,
+    .ongs {
+        width: 350px;
+        height: 50%;
+        margin: 10px 0;
+        flex-direction: column;
+    }
+
+    .doacao h1, 
+    .ongs h1 {
+        font-size: 30px;
+    }
+
+    .icons i {
+        font-size: 20px;
+    }
+
+    .header {
+        padding-right: 10px;
+    }
+
+    .icns {
+        padding-right: 15px;
+    }
+
+    .botton {
+        gap: 5px;
+        padding: 5px 10px;
+    }
+
+    .botton h1 {
+        font-size: 14px;
+    }
+
+    .botton img {
+        width: 30px;
+        height: 30px;
+    }
+
+    .footer2 {
+        font-size: 12px;
+    }
+
+    .politica{
+        gap: 0;
+    }
+}
+

@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DoaExpress</title>
+    <link rel="stylesheet" href="link.css">
+    <link rel="stylesheet" href="overlay.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <style>
+        .normal {
+            margin-top: 60px; /* Adiciona espaço acima do texto */
+        }
+
+        .normal p {
+            margin: 0; /* Remove as margens */
+            line-height: 1.5; /* Altura da linha para melhorar a legibilidade */
+            text-align: justify; /* Alinha o texto justificado */
+        }
+        
+        .normal h1, .normal h2 {
+            margin: 0; /* Remove as margens dos títulos */
+            text-align: justify; /* Alinha os títulos justificados */
+        }
+        
+        .normal strong {
+            font-size: 1.2em; /* Tamanho maior para os subtítulos */
+        }
+    </style>
+</head>
+<body>
+    <div id="content">
+        <div class="sidebar">
+            <div class="logo">
+                <a href="telaprincipal.html"><img src="imagens/logo.png" alt=""></a>
+            </div>
+            <div class="icons">
+                <div class="icon-item">
+                    <i class='bx bxs-home'></i>
+                    <p><a href="telaprincipal.html">Início</a></p>
+                </div>
+                <div class="icon-item">
+                    <i class='bx bx-edit'></i>
+                    <p><a href="doacao.html">Criar Demanda</a></p>
+                </div>
+                <div class="icon-item">
+                    <i class='bx bxs-user-plus'></i>
+                    <p><a href="convite.html">Convidar Pessoas</a></p>
+                </div>
+            </div>
+        </div>
+        <div class="header">
+            <div class="icns">
+                <i class='bx bxs-wallet'></i>
+                <i class='bx bxs-bell'></i>
+            </div>
+            <div class="botton" onclick="toggleOverlay()">
+                <h1>PERFIL</h1>
+                <img src="perfil.png" alt="">
+            </div>
+        </div>
+
+        <div id="overlay" class="overlay" onclick="closeOverlay(event)">
+            <div class="container" onclick="event.stopPropagation()">
+                <div class="foto">
+                    <img src="perfil.png" alt="">
+                    <p>EricRibeiro</p>
+                </div>
+                <div class="perfil">
+                    <i class='bx bxs-user'></i>
+                    <p><a href="perfil.html">Perfil</a></p>
+                </div>
+                <div class="icons1">
+                    <div>
+                        <i class='bx bx-edit'></i>
+                        <p><a href="doacao.html">Criar Nova Demanda</a></p>
+                    </div>
+                    <div>
+                        <i class='bx bxs-heart'></i>
+                        <p><a href="historico.html">Histórico de Doações</a></p>
+                    </div>
+                    <div>
+                        <i class='bx bxs-wallet'></i>
+                        <p><a href="">Meus Pontos</a></p>
+                    </div>
+                </div>
+                <div class="config">
+                    <div>
+                        <i class='bx bxs-cog'></i>
+                        <p><a href="">Configurações</a></p>
+                    </div>
+                    <div>
+                        <i class='bx bxs-user-plus'></i>
+                        <p><a href="convite.html">Convidar Pessoas</a></p>
+                    </div>
+                    <div>
+                        <i class='bx bxs-help-circle'></i>
+                        <p><a href="">Ajuda</a></p>
+                    </div>
+                </div>
+                <div class="exit">
+                    <i class='bx bxs-exit'></i>
+                    <p><a href="#" id="logoutLink">Sair</a></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="normal">
+            <div class="home" style="color: white;">
+                
+                    <h2>Política de Reembolso – DoaExpress</h2> <br>
+
+                    <p>A plataforma de doações de itens é destinada exclusivamente à doação gratuita de bens e não envolve transações financeiras relacionadas à compra ou venda de produtos. <br>
+                        Portanto, não há políticas de reembolso aplicáveis, uma vez que todos os itens oferecidos na plataforma são doados de forma voluntária e sem custo para os beneficiários.</p> <br>
+                        No entanto, para esclarecer dúvidas e ajudar a manter a transparência entre doadores e beneficiários, seguem algumas diretrizes relacionadas ao processo de doação: <br>
+                    
+                    <br><h3>1. Ausência de Transações Financeiras</h3> <br>
+                    
+                    <p>
+                        A plataforma opera exclusivamente com doações gratuitas de itens e não exige qualquer pagamento, taxa ou compensação por parte dos beneficiários para a obtenção dos itens doados.<br>
+                        Não há venda de produtos ou serviços, portanto, não existe a possibilidade de reembolso ou devolução de valores.
+                    </p> <br>
+                    
+                    <h3>2. Retorno de Itens</h3> <br>
+                    
+                    <p>
+                        Caso um item recebido por meio da plataforma não atenda às expectativas ou não seja mais necessário, o beneficiário poderá optar por devolvê-lo ao doador ou repassá-lo a outra pessoa que possa precisar. <br>
+                        Esse processo deve ser acordado diretamente entre o doador e o beneficiário.<br>
+                        A plataforma recomenda que doadores e beneficiários discutam antecipadamente as condições e possíveis devoluções antes de finalizarem o processo de doação.
+                    </p> <br>
+                    
+                    <h3>3. Responsabilidade dos Usuários</h3> <br>
+                
+                    <p>
+                        odos os itens doados são oferecidos "como estão", e o doador é responsável por fornecer uma descrição precisa das condições do item. <br>
+                         Não há garantias sobre a qualidade, durabilidade ou segurança dos itens, e cabe ao beneficiário avaliar o estado do item antes de aceitá-lo.
+                    </p> <br>
+                    
+                    <h3>4. Doações para Campanhas ou Organizações</h3> <br>
+                    
+                    <p>
+                        Em casos específicos em que a plataforma colabore com campanhas de doação para organizações, e estas aceitem contribuições financeiras para fins específicos, os termos e condições de reembolso para essas contribuições <br>
+                        serão definidos pela própria campanha ou organização.  <br>
+                        A plataforma não gerencia ou processa essas contribuições diretamente.
+                        </p> <br>
+
+                    <h3>5. Alterações na Política</h3> <br>
+                    
+                    <p>
+                        Esta Política de Reembolso é sujeita a alterações para refletir mudanças nos serviços ou requisitos legais. Os usuários serão notificados de qualquer alteração relevante através da plataforma. <br>
+                        É recomendável que os usuários revisem regularmente esta política para entender como funciona a gestão de itens doados.
+
+                    <p>Ao utilizar a plataforma para doar ou receber itens, o usuário reconhece que compreende a natureza gratuita das doações e concorda que não há política de reembolso aplicável para os itens doados.</p>
+            </div>
+            
+        </div>
+
+        <div class="politica">
+            <div class="column">
+                <h2>Políticas de Uso</h2>
+                <ul>
+                    <li><a href="regras.html">Regras de Uso</a></li>
+                    <li><a href="termosdoacao.html">Termos e Condições</a></li>
+                    <li><a href="politicaprivacidade.html">Política de Privacidade</a></li>
+                    <li><a href="cookies.html">Política de Cookies</a></li>
+                </ul>
+            </div>
+            <div class="column">
+                <h2>Informações Gerais</h2>
+                <ul>
+                    <li><a href="avisolegal.html">Aviso Legal</a></li>
+                    <li><a href="comofunciona.html">Como Funciona</a></li>
+                    <li><a href="termosdoacao.html">Termos de Doação</a></li>
+                    <li><a href="#">Política de Reembolso</a></li>
+                </ul>
+            </div>
+            <div class="column">
+                <h2>Outros Links</h2>
+                <ul>
+                    <li><a href="#">Imprensa</a></li>
+                    <li><a href="#">Contato</a></li>
+                    <li><a href="#">Ajuda</a></li>
+                    <li><a href="#">Parceiros Licenciados</a></li>
+                    <li><a href="#">Convide Amigos</a></li>
+                </ul>
+            </div>
+        </div>
+        <footer>
+            <div class="footer2">
+                <h4>Copyright 2024 DOAEXPRESS, Todos os Direitos Reservados.</h4>
+            </div>
+    </footer>
+    </div>
+
+    <div id="loadingScreen" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background-color:rgba(0,0,0,0.7); color:white; font-size:24px; text-align:center; line-height:100vh; z-index:1000;">
+        Saindo...
+    </div>
+
+    <script>
+        function toggleOverlay() {
+            const overlay = document.getElementById('overlay');
+            overlay.style.display = overlay.style.display === 'block' ? 'none' : 'block';
+            positionOverlay();
+        }
+    
+        function closeOverlay(event) {
+            const overlay = document.getElementById('overlay');
+            if (event.target === overlay) {
+                overlay.style.display = 'none';
+            }
+        }
+    
+        function positionOverlay() {
+            const botton = document.querySelector('.botton');
+            const overlay = document.getElementById('overlay');
+            const rect = botton.getBoundingClientRect();
+            const offsetLeft = -200;
+            overlay.style.top = `${rect.bottom}px`; /* Calcula em relação à viewport */
+            overlay.style.left = `${rect.left + offsetLeft}px`;
+            overlay.style.width = `${rect.width}px`;
+        }
+    
+        window.addEventListener('load', positionOverlay);
+        window.addEventListener('resize', positionOverlay);
+    </script>
+    <script>
+    document.getElementById("logoutLink").addEventListener("click", function(event) {
+        event.preventDefault(); // Previne o comportamento padrão do link
+        
+        // Exibe a tela de carregamento
+        document.getElementById("loadingScreen").style.display = "block";
+        
+        // Redireciona para a página index.html após um tempo
+        setTimeout(function() {
+            window.location.href = "../site/index.html"; // Substitua pelo caminho correto se necessário
+        }, 2000); // Tempo de espera em milissegundos (2000ms = 2s)
+    });
+</script>
+</body>
+</html>

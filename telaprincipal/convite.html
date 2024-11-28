@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Convide Pessoas</title>
+    <link rel="stylesheet" href="csstelap.css">
+    <link rel="stylesheet" href="overlay.css">
+    <link rel="stylesheet" href="formulariodoa.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <style>
+     body{
+            background-image: linear-gradient(to right, #0C0518, #000000);
+        }
+
+        #qrcode{
+            background-image: url(Untitled.png);
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+        }
+    </style>
+</head>
+<body>
+    <div id="content">
+        <div class="sidebar">
+            <div class="logo">
+                <a href="telaprincipal.html"><img src="imagens/logo.png" alt=""></a>
+            </div>
+            <div class="icons">
+                <div class="icon-item">
+                    <i class='bx bxs-home'></i>
+                    <p style="color: #fff;"><a href="telaprincipal.html">Início</a></p>
+                </div>
+                <div class="icon-item">
+                    <i class='bx bx-edit'></i>
+                    <p style="color: #ffffff;"><a href="doacao.html">Criar Demanda</a></p>
+                </div>
+                <div class="icon-item">
+                    <i class='bx bxs-user-plus'></i>
+                    <p style="color: #fff;"><a href="convite.html">Convidar Pessoas</a></p>
+                </div>
+            </div>
+        </div>
+        <div class="header">
+            <div class="icns">
+                <i class='bx bxs-wallet'></i>
+                <i class='bx bxs-bell'></i>
+            </div>
+            <div class="botton" onclick="toggleOverlay()">
+                <h1>PERFIL</h1>
+                <img src="perfil.png" alt="">
+            </div>
+        </div>
+
+        <div id="overlay" class="overlay">
+            <div class="container" onclick="event.stopPropagation()">
+                <div class="foto">
+                    <img src="perfil.png" alt="">
+                    <p style="color: #fff;">EricRibeiro</p>
+                </div>
+                <div class="perfil">
+                    <i class='bx bxs-user'></i>
+                    <p><a href="perfil.html">Perfil</a></p>
+                </div>
+                <div class="icons1">
+                    <div>
+                        <i class='bx bx-edit'></i>
+                        <p><a href="doacao.html">Criar Nova Demanda</a></p>
+                    </div>
+                    <div>
+                        <i class='bx bxs-heart'></i>
+                        <p><a href="historico.html">Historico de Doações</a></p>
+                    </div>
+                    <div>
+                        <i class='bx bxs-wallet'></i>
+                        <p><a href="">Meus Pontos</a></p>
+                    </div>
+                </div>
+                <div class="config">
+                    <div>
+                        <i class='bx bxs-cog'></i>
+                        <p><a href="">Configurações</a></p>
+                    </div>
+                    <div>
+                        <i class='bx bxs-user-plus'></i>
+                        <p><a href="">Convidar Pessoas</a></p>
+                    </div>
+                    <div>
+                        <i class='bx bxs-help-circle'></i>
+                        <p><a href="">Ajuda</a></p>
+                    </div>
+                </div>
+                <div class="exit">
+                    <i class='bx bxs-exit'></i>
+                    <p><a href="">Sair</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="contact" id="contact">
+        <div class="contact" id="contact">
+            <h1 style="color: #fff; text-align: center;">Convide Pessoas</h1>
+            <div style="display: flex; justify-content: center; margin-top: 20px;">
+                <div id="qrcode" style="width: 150px; height: 150px; background-color: #fff;"></div>
+            </div>
+            <div style="text-align: center; margin-top: 20px;">
+                <input type="text" id="invite-link" value="doaexpress/registro.html" readonly 
+                       style="width: 90%; padding: 10px; border-radius: 5px; border: none;">
+            </div>
+            <div style="display: flex; justify-content: center; margin-top: 20px;">
+                <button onclick="copyLink()" style="margin-right: 10px; padding: 10px 20px; 
+                        border-radius: 5px; border: 1px solid #fff; background-color: transparent; color: white;">Copiar</button>
+                <button onclick="shareLink()" style="padding: 10px 20px; border-radius: 5px; border: 1px solid #fff; 
+                        background-color: transparent; color: white;">Compartilhar</button>
+            </div>
+        </div>
+        
+    </div>
+    
+    <section>
+        
+    </section>
+    <script>
+        function toggleOverlay() {
+            const overlay = document.getElementById('overlay');
+            overlay.style.display = overlay.style.display === 'block' ? 'none' : 'block';
+            positionOverlay();
+        }
+    
+        function closeOverlay(event) {
+            const overlay = document.getElementById('overlay');
+            if (event.target === overlay) {
+                overlay.style.display = 'none';
+            }
+        }
+    
+        function positionOverlay() {
+            const botton = document.querySelector('.botton');
+            const overlay = document.getElementById('overlay');
+            const rect = botton.getBoundingClientRect();
+            const offsetLeft = -200;
+            overlay.style.top = `${rect.bottom + window.scrollY}px`;
+            overlay.style.left = `${rect.left + window.scrollX + offsetLeft}px`;
+            overlay.style.width = `${rect.width}px`;
+        }
+    
+        window.addEventListener('load', positionOverlay);
+        window.addEventListener('resize', positionOverlay);
+    </script>
+    <script>
+        function copyLink() {
+            const link = document.getElementById('invite-link');
+            link.select();
+            link.setSelectionRange(0, 99999); // Para dispositivos móveis
+            document.execCommand("copy");
+            alert("Link copiado: " + link.value);
+        }
+    
+        function shareLink() {
+            const link = document.getElementById('invite-link').value;
+            if (navigator.share) {
+                navigator.share({
+                    title: 'Convite',
+                    text: 'Junte-se a mim usando este link:',
+                    url: link,
+                })
+                .catch((error) => console.error('Erro ao compartilhar', error));
+            } else {
+                alert("A API de compartilhamento não é suportada no seu navegador.");
+            }
+        }
+    </script>
+    <script>
+        document.getElementById("logoutLink").addEventListener("click", function(event) {
+            event.preventDefault(); // Previne o comportamento padrão do link
+            
+            // Exibe a tela de carregamento
+            document.getElementById("loadingScreen").style.display = "block";
+            
+            // Redireciona para a página index.html após um tempo
+            setTimeout(function() {
+                window.location.href = "../site/index.html"; // Substitua pelo caminho correto se necessário
+            }, 2000); // Tempo de espera em milissegundos (2000ms = 2s)
+        });
+    </script>
+</body>
+</html>

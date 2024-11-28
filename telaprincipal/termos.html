@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DoaExpress</title>
+    <link rel="stylesheet" href="link.css">
+    <link rel="stylesheet" href="overlay.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <style>
+        .normal {
+            margin-top: 60px; /* Adiciona espaço acima do texto */
+        }
+
+        .normal p {
+            margin: 0; /* Remove as margens */
+            line-height: 1.5; /* Altura da linha para melhorar a legibilidade */
+            text-align: justify; /* Alinha o texto justificado */
+        }
+        
+        .normal h1, .normal h2 {
+            margin: 0; /* Remove as margens dos títulos */
+            text-align: justify; /* Alinha os títulos justificados */
+        }
+        
+        .normal strong {
+            font-size: 1.2em; /* Tamanho maior para os subtítulos */
+        }
+    </style>
+</head>
+<body>
+    <div id="content">
+        <div class="sidebar">
+            <div class="logo">
+                <a href="telaprincipal.html"><img src="imagens/logo.png" alt=""></a>
+            </div>
+            <div class="icons">
+                <div class="icon-item">
+                    <i class='bx bxs-home'></i>
+                    <p><a href="telaprincipal.html">Início</a></p>
+                </div>
+                <div class="icon-item">
+                    <i class='bx bx-edit'></i>
+                    <p><a href="doacao.html">Criar Demanda</a></p>
+                </div>
+                <div class="icon-item">
+                    <i class='bx bxs-user-plus'></i>
+                    <p><a href="convite.html">Convidar Pessoas</a></p>
+                </div>
+            </div>
+        </div>
+        <div class="header">
+            <div class="icns">
+                <i class='bx bxs-wallet'></i>
+                <i class='bx bxs-bell'></i>
+            </div>
+            <div class="botton" onclick="toggleOverlay()">
+                <h1>PERFIL</h1>
+                <img src="perfil.png" alt="">
+            </div>
+        </div>
+
+        <div id="overlay" class="overlay" onclick="closeOverlay(event)">
+            <div class="container" onclick="event.stopPropagation()">
+                <div class="foto">
+                    <img src="perfil.png" alt="">
+                    <p>EricRibeiro</p>
+                </div>
+                <div class="perfil">
+                    <i class='bx bxs-user'></i>
+                    <p><a href="perfil.html">Perfil</a></p>
+                </div>
+                <div class="icons1">
+                    <div>
+                        <i class='bx bx-edit'></i>
+                        <p><a href="doacao.html">Criar Nova Demanda</a></p>
+                    </div>
+                    <div>
+                        <i class='bx bxs-heart'></i>
+                        <p><a href="historico.html">Histórico de Doações</a></p>
+                    </div>
+                    <div>
+                        <i class='bx bxs-wallet'></i>
+                        <p><a href="">Meus Pontos</a></p>
+                    </div>
+                </div>
+                <div class="config">
+                    <div>
+                        <i class='bx bxs-cog'></i>
+                        <p><a href="">Configurações</a></p>
+                    </div>
+                    <div>
+                        <i class='bx bxs-user-plus'></i>
+                        <p><a href="convite.html">Convidar Pessoas</a></p>
+                    </div>
+                    <div>
+                        <i class='bx bxs-help-circle'></i>
+                        <p><a href="">Ajuda</a></p>
+                    </div>
+                </div>
+                <div class="exit">
+                    <i class='bx bxs-exit'></i>
+                    <p><a href="#" id="logoutLink">Sair</a></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="normal">
+            <div class="home" style="color: white;">
+                
+                    <h2>Termos e Condições de Uso – DoaExpress</h2> <br>
+
+                    <p>Estes Termos e Condições regem o uso da plataforma de doações de itens, que conecta doadores e beneficiários de forma segura e eficiente.  <br>
+                        Ao acessar ou utilizar a plataforma, você concorda com os termos estabelecidos abaixo. Leia atentamente as condições antes de prosseguir com o uso.</p> <br>
+                    
+                    <h3>1. Aceitação dos Termos</h3>
+                    
+                    <p>
+                        O uso da plataforma implica na aceitação integral destes Termos e Condições, bem como das Políticas de Uso. <br>
+                        Caso não concorde com alguma das condições, não utilize os serviços oferecidos.
+                    </p> <br>
+                    
+                    <h3>2. Cadastro e Responsabilidades do Usuário</h3>
+                    
+                    <p>
+                        Para utilizar a plataforma, é necessário criar uma conta fornecendo informações verdadeiras e completas.<br>
+                        O usuário é responsável por manter os dados atualizados e garantir a segurança de suas credenciais de acesso. <br>
+                        O usuário é inteiramente responsável por todas as atividades realizadas em sua conta e compromete-se a notificar imediatamente a plataforma em caso de qualquer uso não autorizado ou suspeito.
+                    </p> <br>
+                    
+                    <h3>3. Condições para Doações</h3>
+                
+                    <p>
+                        Os itens doados devem estar em condições apropriadas para uso e ser disponibilizados de forma gratuita, sem qualquer expectativa de pagamento ou troca. <br>
+                        A plataforma não se responsabiliza pela verificação prévia dos itens, sendo o doador integralmente responsável pela descrição e condição dos bens oferecidos. <br>
+                        O usuário concorda em não doar itens proibidos por lei ou que possam causar danos à saúde ou segurança dos beneficiários.
+                    </p> <br>
+                    
+                    <h3>4. Recebimento e Solicitação de Doações</h3>
+                    
+                    <p>
+                        Os beneficiários devem utilizar os itens recebidos para os fins indicados durante a solicitação e não devem revendê-los ou usá-los para fins comerciais.<br>
+                        Qualquer tentativa de obter itens de forma fraudulenta, fornecendo informações falsas ou omitindo dados relevantes, poderá resultar na suspensão ou exclusão da conta.
+                    </p> <br>
+                    
+                    <h3>5. Limitação de Responsabilidade</h3>
+                    
+                    <p>
+                        A plataforma atua como um intermediário entre doadores e beneficiários, não se responsabilizando por danos, prejuízos ou qualquer incidente decorrente da doação ou uso dos itens.<br>
+                        Não garantimos a disponibilidade contínua ou livre de erros dos serviços, podendo ocorrer interrupções temporárias para manutenção ou atualizações.
+                    </p> <br>
+                    
+                    <h3>6. Privacidade e Tratamento de Dados</h3> 
+                    
+                    <p>
+                        As informações fornecidas no cadastro são utilizadas exclusivamente para viabilizar a operação da plataforma e melhorar a experiência do usuário. <br>
+                        Nenhum dado será vendido ou compartilhado com terceiros sem o consentimento explícito do usuário, exceto conforme exigido por lei.<br>
+                        Ao utilizar a plataforma, o usuário concorda com a coleta e uso de suas informações de acordo com a nossa Política de Privacidade.
+                    </p> <br>
+                    
+                    <h3>7. Alterações dos Termos e Serviços</h3> 
+                    
+                    <p>
+                        A plataforma reserva-se o direito de modificar os Termos e Condições a qualquer momento, sem aviso prévio. <br>
+                        É responsabilidade do usuário revisar periodicamente os termos para se manter informado sobre quaisquer alterações. <br>
+                        O uso contínuo da plataforma após a alteração dos termos implica na aceitação das mudanças.<br>
+                    </p>
+
+                    <h3>8. Disposições Gerais</h3> 
+                    
+                    <p>
+                        Caso qualquer disposição destes Termos e Condições seja considerada inválida ou inexequível, as demais permanecerão em pleno vigor e efeito.<br>
+                        Estes termos constituem o acordo completo entre o usuário e a plataforma em relação ao uso dos serviços, substituindo quaisquer entendimentos ou acordos anteriores.
+                    </p> <br>
+
+                    <p>Ao utilizar a nossa plataforma de doações de itens, o usuário confirma estar ciente e concordar com todos os Termos e Condições aqui descritos.</p>
+            </div>
+            
+        </div>
+
+        <div class="politica" style="margin-top: 240px;">
+            <div class="column">
+                <h2>Políticas de Uso</h2>
+                <ul>
+                    <li><a href="#">Regras de Uso</a></li>
+                    <li><a href="#">Termos e Condições</a></li>
+                    <li><a href="#">Política de Privacidade</a></li>
+                    <li><a href="#">Política de Cookies</a></li>
+                </ul>
+            </div>
+            <div class="column">
+                <h2>Informações Gerais</h2>
+                <ul>
+                    <li><a href="#">Aviso Legal</a></li>
+                    <li><a href="#">Como Funciona</a></li>
+                    <li><a href="#">Termos de Doação</a></li>
+                    <li><a href="#">Política de Reembolso</a></li>
+                </ul>
+            </div>
+            <div class="column">
+                <h2>Outros Links</h2>
+                <ul>
+                    <li><a href="#">Imprensa</a></li>
+                    <li><a href="#">Contato</a></li>
+                    <li><a href="#">Ajuda</a></li>
+                    <li><a href="#">Parceiros Licenciados</a></li>
+                    <li><a href="#">Convide Amigos</a></li>
+                </ul>
+            </div>
+        </div>
+        <footer>
+            <div class="footer2">
+                <h4>Copyright 2024 DOAEXPRESS, Todos os Direitos Reservados.</h4>
+            </div>
+    </footer>
+    </div>
+
+    <div id="loadingScreen" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background-color:rgba(0,0,0,0.7); color:white; font-size:24px; text-align:center; line-height:100vh; z-index:1000;">
+        Saindo...
+    </div>
+
+    <script>
+        function toggleOverlay() {
+            const overlay = document.getElementById('overlay');
+            overlay.style.display = overlay.style.display === 'block' ? 'none' : 'block';
+            positionOverlay();
+        }
+    
+        function closeOverlay(event) {
+            const overlay = document.getElementById('overlay');
+            if (event.target === overlay) {
+                overlay.style.display = 'none';
+            }
+        }
+    
+        function positionOverlay() {
+            const botton = document.querySelector('.botton');
+            const overlay = document.getElementById('overlay');
+            const rect = botton.getBoundingClientRect();
+            const offsetLeft = -200;
+            overlay.style.top = `${rect.bottom}px`; /* Calcula em relação à viewport */
+            overlay.style.left = `${rect.left + offsetLeft}px`;
+            overlay.style.width = `${rect.width}px`;
+        }
+    
+        window.addEventListener('load', positionOverlay);
+        window.addEventListener('resize', positionOverlay);
+    </script>
+    <script>
+    document.getElementById("logoutLink").addEventListener("click", function(event) {
+        event.preventDefault(); // Previne o comportamento padrão do link
+        
+        // Exibe a tela de carregamento
+        document.getElementById("loadingScreen").style.display = "block";
+        
+        // Redireciona para a página index.html após um tempo
+        setTimeout(function() {
+            window.location.href = "../site/index.html"; // Substitua pelo caminho correto se necessário
+        }, 2000); // Tempo de espera em milissegundos (2000ms = 2s)
+    });
+</script>
+</body>
+</html>

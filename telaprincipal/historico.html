@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Histórico</title>
+    <link rel="stylesheet" href="csstelap.css">
+    <link rel="stylesheet" href="conta.css">
+    <link rel="stylesheet" href="overlay.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <script src="serverhistorico.js"></script>
+</head>
+<body>
+    <div id="content">
+        <div class="sidebar">
+            <div class="logo">
+                <a href="telaprincipal.html"><img src="imagens/logo.png" alt=""></a>
+            </div>
+            <div class="icons">
+                <div class="icon-item">
+                    <i class='bx bxs-home'></i>
+                    <p><a href="telaprincipal.html">Início</a></p>
+                </div>
+                <div class="icon-item">
+                    <i class='bx bx-edit'></i>
+                    <p><a href="doacao.html">Criar Demanda</a></p>
+                </div>
+                <div class="icon-item">
+                    <i class='bx bxs-user-plus'></i>
+                    <p><a href="convite.html">Convidar Pessoas</a></p>
+                </div>
+            </div>
+        </div>
+        <div class="header">
+            <div class="icns">
+                <i class='bx bxs-wallet'></i>
+                <i class='bx bxs-bell'></i>
+            </div>
+            <div class="botton" onclick="toggleOverlay()">
+                <h1>PERFIL</h1>
+                <img src="perfil.png" alt="">
+            </div>
+        </div>
+
+        <div id="overlay" class="overlay" onclick="closeOverlay(event)">
+            <div class="container" onclick="event.stopPropagation()">
+                <div class="foto">
+                    <img src="perfil.png" alt="">
+                    <p>EricRibeiro</p>
+                </div>
+                <div class="perfil">
+                    <i class='bx bxs-user'></i>
+                    <p><a href="perfil.html">Perfil</a></p>
+                </div>
+                <div class="icons1">
+                    <div>
+                        <i class='bx bx-edit'></i>
+                        <p><a href="doacao.html">Criar Nova Demanda</a></p>
+                    </div>
+                    <div>
+                        <i class='bx bxs-heart'></i>
+                        <p><a href="historico.html">Histórico de Doações</a></p>
+                    </div>
+                    <div>
+                        <i class='bx bxs-wallet'></i>
+                        <p><a href="">Meus Pontos</a></p>
+                    </div>
+                </div>
+                <div class="config">
+                    <div>
+                        <i class='bx bxs-cog'></i>
+                        <p><a href="">Configurações</a></p>
+                    </div>
+                    <div>
+                        <i class='bx bxs-user-plus'></i>
+                        <p><a href="convite.html">Convidar Pessoas</a></p>
+                    </div>
+                    <div>
+                        <i class='bx bxs-help-circle'></i>
+                        <p><a href="">Ajuda</a></p>
+                    </div>
+                </div>
+                <div class="exit">
+                    <i class='bx bxs-exit'></i>
+                    <p><a href="#" id="logoutLink">Sair</a></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="home">
+            <div class="conta">
+                <div class="card">
+                    <div class="card-header">
+                        <h2>Histórico de Doações</h2>
+                        <button class="update-btn">Atualizar</button>
+                    </div>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Nome</th>
+                                <th>Tipo</th>
+                                <th>Data</th>
+                                <th>Status</th>
+                                <th>Quantidade</th>
+                                <th>Descrição</th>
+                            </tr>
+                        </thead>
+                        <tbody id="historicoDoacoes">
+                            <!-- Linhas da tabela serão adicionadas aqui -->
+                        </tbody>
+                    </table>                    
+                    <h4 style="color: #888888;">SEM HISTORICO DE DOAÇÕES</h4>
+                    <button class="load-more">CARREGAR MAIS</button>
+                </div>
+            </div>
+        </div>
+        </div>
+        
+        
+
+    <div id="loadingScreen" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background-color:rgba(0,0,0,0.7); color:white; font-size:24px; text-align:center; line-height:100vh; z-index:1000;">
+        Saindo...
+    </div>
+
+    <script>
+        function toggleOverlay() {
+            const overlay = document.getElementById('overlay');
+            overlay.style.display = overlay.style.display === 'block' ? 'none' : 'block';
+            positionOverlay();
+        }
+    
+        function closeOverlay(event) {
+            const overlay = document.getElementById('overlay');
+            if (event.target === overlay) {
+                overlay.style.display = 'none';
+            }
+        }
+    
+        function positionOverlay() {
+            const botton = document.querySelector('.botton');
+            const overlay = document.getElementById('overlay');
+            const rect = botton.getBoundingClientRect();
+            const offsetLeft = -200;
+            overlay.style.top = `${rect.bottom}px`; /* Calcula em relação à viewport */
+            overlay.style.left = `${rect.left + offsetLeft}px`;
+            overlay.style.width = `${rect.width}px`;
+        }
+    
+        window.addEventListener('load', positionOverlay);
+        window.addEventListener('resize', positionOverlay);
+    </script>
+    <script>
+    document.getElementById("logoutLink").addEventListener("click", function(event) {
+        event.preventDefault(); // Previne o comportamento padrão do link
+        
+        // Exibe a tela de carregamento
+        document.getElementById("loadingScreen").style.display = "block";
+        
+        // Redireciona para a página index.html após um tempo
+        setTimeout(function() {
+            window.location.href = "../site/index.html"; // Substitua pelo caminho correto se necessário
+        }, 2000); // Tempo de espera em milissegundos (2000ms = 2s)
+    });
+</script>
+<script>
+    // Função para carregar o histórico de doações
+    function carregarHistorico() {
+        fetch('/api/doacoes')
+            .then(response => response.json())
+            .then(data => {
+                const historicoTabela = document.getElementById('historicoDoacoes');
+                historicoTabela.innerHTML = ''; // Limpar tabela
+    
+                data.forEach((doacao, index) => {
+                    const row = `<tr>
+                        <td>${index + 1}</td>
+                        <td>${doacao.receptor}</td>
+                        <td>${doacao.localizacao}</td>
+                        <td>${doacao.data}</td>
+                        <td class="status ${doacao.status.toLowerCase()}">${doacao.status}</td>
+                        <td>${doacao.quantidade}</td>
+                        <td><a href="#" class="details">&#x2192;</a></td>
+                    </tr>`;
+                    historicoTabela.innerHTML += row;
+                });
+            })
+            .catch(error => console.error('Erro ao carregar histórico:', error));
+    }
+    
+    // Chama a função ao carregar a página
+    window.addEventListener('load', carregarHistorico);
+    </script>
+    <script>
+        // Função para enviar uma nova doação
+        function adicionarDoacao() {
+            const novaDoacao = {
+                receptor: "Novo Receptor",
+                localizacao: "Cidade Exemplo",
+                data: new Date().toLocaleDateString(),
+                status: "Pending",
+                quantidade: "$500",
+                itens: "Roupas, Alimentos"
+            };
+        
+            fetch('/api/doacoes', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(novaDoacao)
+            })
+            .then(response => response.json())
+            .then(() => {
+                carregarHistorico(); // Atualizar histórico após adicionar
+            })
+            .catch(error => console.error('Erro ao adicionar doação:', error));
+        }
+        
+        // Exemplo de chamada
+        document.querySelector('.update-btn').addEventListener('click', adicionarDoacao);
+        </script>  
+        <script>
+            // Função para criar uma nova demanda e atualizar a tabela
+function criarDemanda() {
+    // Capturar os valores do formulário
+    const dadosDemanda = {
+        nome: document.getElementById('nome').value,
+        tipo: document.getElementById('tipo').value,
+        quantidade: document.getElementById('quantidade').value,
+        descricao: document.getElementById('descricao').value,
+        infoAdicional: document.getElementById('infoAdicional').value
+    };
+
+    // Enviar a demanda para o servidor
+    fetch('api_demandas.php', { // Substitua pelo caminho correto
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(dadosDemanda)
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.success) {
+            // Atualizar a tabela com a nova demanda
+            adicionarDemandaNaTabela(data.demanda);
+        } else {
+            console.error('Erro ao criar demanda:', data.message);
+        }
+    })
+    .catch(error => console.error('Erro na solicitação:', error));
+}
+
+// Função para adicionar uma nova demanda na tabela
+function adicionarDemandaNaTabela(demanda) {
+    const tabela = document.getElementById('historicoDoacoes');
+    const row = `
+        <tr>
+            <td>${demanda.id}</td>
+            <td>${demanda.nome}</td>
+            <td>${demanda.tipo}</td>
+            <td>${demanda.data_criacao}</td>
+            <td class="status ${demanda.status.toLowerCase()}">${demanda.status}</td>
+            <td>${demanda.quantidade}</td>
+            <td>${demanda.descricao}</td>
+        </tr>
+    `;
+    tabela.innerHTML += row; // Adiciona a nova linha na tabela
+}
+
+// Exemplo de chamada ao clicar no botão de envio
+document.querySelector('.submit-btn').addEventListener('click', criarDemanda);
+
+        </script>    
+</body>
+</html>

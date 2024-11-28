@@ -1,0 +1,108 @@
+.caixa {
+    height: 560px;
+    width: 300px;
+    background-color: #282828;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Poppins', sans-serif;
+    position: fixed;
+}
+
+#caixa1 {
+    position: fixed; /* Altera para fixed */
+    display: none; /* Mantém escondido inicialmente */
+    z-index: 1000; /* Coloca sobre outros elementos */
+    background-color: rgba(0, 0, 0, 0.7); /* Exemplo de fundo */
+}
+
+.botton {
+    position: relative; /* Garante que .botton seja referencial */
+    z-index: 1001;
+}
+
+a{
+    color: #fff;
+    text-decoration: none;
+}
+.foto {
+    padding-bottom: 10px;
+    border-bottom: 1px solid #fff;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative; 
+}
+
+.foto, .perfil, .icons1, .config, .exit{
+    transform: translateY(-60px);
+}
+
+.perfil{
+    padding-top: 20px; 
+    padding-bottom: 10px; 
+    padding-left: 10px;
+    font-size: 20px;
+    border-bottom: 1px solid #fff;
+    width: 100%; 
+    box-sizing: border-box; 
+    color: #fff;
+}
+
+.icons1{
+    padding-bottom: 10px; 
+    padding-left: 10px;
+    font-size: 20px;
+    border-bottom: 1px solid #fff;
+    width: 100%;
+    box-sizing: border-box; 
+    color: #fff;
+}
+
+.config {
+    padding-bottom: 20px; 
+    padding-left: 10px;
+    font-size: 20px;
+    border-bottom: 1px solid #fff;
+    width: 100%; 
+    box-sizing: border-box;
+    color: #fff;
+}
+
+
+.exit {
+    padding-left: 10px;
+    font-size: 20px;
+    width: 100%;
+    box-sizing: border-box;
+    color: #fff;
+}
+
+.perfil, .exit {
+    display: flex;
+    align-items: center;
+}
+
+.icons1, .config {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.icons1 div, .config div {
+    display: flex;
+    align-items: center;
+    margin-bottom: 6px;
+}
+
+.icons1 i, .config i, .perfil i, .exit i {
+    margin-right: 10px;
+}
+
+.icons1 p, .config p, .perfil p, .exit p {
+    margin: 0;
+    font-size: 17px;
+}
+

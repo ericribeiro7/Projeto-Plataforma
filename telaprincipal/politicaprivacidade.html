@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DoaExpress</title>
+    <link rel="stylesheet" href="link.css">
+    <link rel="stylesheet" href="overlay.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <style>
+        .normal {
+            margin-top: 60px; /* Adiciona espaço acima do texto */
+        }
+
+        .normal p {
+            margin: 0; /* Remove as margens */
+            line-height: 1.5; /* Altura da linha para melhorar a legibilidade */
+            text-align: justify; /* Alinha o texto justificado */
+        }
+        
+        .normal h1, .normal h2 {
+            margin: 0; /* Remove as margens dos títulos */
+            text-align: justify; /* Alinha os títulos justificados */
+        }
+        
+        .normal strong {
+            font-size: 1.2em; /* Tamanho maior para os subtítulos */
+        }
+    </style>
+</head>
+<body>
+    <div id="content">
+        <div class="sidebar">
+            <div class="logo">
+                <a href="telaprincipal.html"><img src="imagens/logo.png" alt=""></a>
+            </div>
+            <div class="icons">
+                <div class="icon-item">
+                    <i class='bx bxs-home'></i>
+                    <p><a href="telaprincipal.html">Início</a></p>
+                </div>
+                <div class="icon-item">
+                    <i class='bx bx-edit'></i>
+                    <p><a href="doacao.html">Criar Demanda</a></p>
+                </div>
+                <div class="icon-item">
+                    <i class='bx bxs-user-plus'></i>
+                    <p><a href="convite.html">Convidar Pessoas</a></p>
+                </div>
+            </div>
+        </div>
+        <div class="header">
+            <div class="icns">
+                <i class='bx bxs-wallet'></i>
+                <i class='bx bxs-bell'></i>
+            </div>
+            <div class="botton" onclick="toggleOverlay()">
+                <h1>PERFIL</h1>
+                <img src="perfil.png" alt="">
+            </div>
+        </div>
+
+        <div id="overlay" class="overlay" onclick="closeOverlay(event)">
+            <div class="container" onclick="event.stopPropagation()">
+                <div class="foto">
+                    <img src="perfil.png" alt="">
+                    <p>EricRibeiro</p>
+                </div>
+                <div class="perfil">
+                    <i class='bx bxs-user'></i>
+                    <p><a href="perfil.html">Perfil</a></p>
+                </div>
+                <div class="icons1">
+                    <div>
+                        <i class='bx bx-edit'></i>
+                        <p><a href="doacao.html">Criar Nova Demanda</a></p>
+                    </div>
+                    <div>
+                        <i class='bx bxs-heart'></i>
+                        <p><a href="historico.html">Histórico de Doações</a></p>
+                    </div>
+                    <div>
+                        <i class='bx bxs-wallet'></i>
+                        <p><a href="">Meus Pontos</a></p>
+                    </div>
+                </div>
+                <div class="config">
+                    <div>
+                        <i class='bx bxs-cog'></i>
+                        <p><a href="">Configurações</a></p>
+                    </div>
+                    <div>
+                        <i class='bx bxs-user-plus'></i>
+                        <p><a href="convite.html">Convidar Pessoas</a></p>
+                    </div>
+                    <div>
+                        <i class='bx bxs-help-circle'></i>
+                        <p><a href="">Ajuda</a></p>
+                    </div>
+                </div>
+                <div class="exit">
+                    <i class='bx bxs-exit'></i>
+                    <p><a href="#" id="logoutLink">Sair</a></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="normal">
+            <div class="home" style="color: white;">
+                
+                    <h2>Política de Privacidade – DoaExpress</h2> <br>
+
+                    <p>A plataforma de doações de itens respeita a privacidade de seus usuários e se compromete a proteger os dados pessoais compartilhados conosco.  <br>
+                        Esta Política de Privacidade explica como coletamos, usamos, armazenamos e protegemos as informações dos usuários.</p> <br>
+                    
+                    <h3>1. Coleta de Informações</h3>
+                    
+                    <p>
+                        oletamos informações pessoais fornecidas voluntariamente pelos usuários ao criar uma conta na plataforma, incluindo nome, e-mail, número de telefone, endereço e outros dados necessários para o funcionamento dos serviços.<br>
+                    </p> <br>
+                    
+                    <h3>2. Uso das Informações</h3>
+                    
+                    <p>
+                        As informações fornecidas são utilizadas para fins operacionais, como facilitar a doação de itens, melhorar a experiência do usuário, personalizar o conteúdo e fornecer suporte técnico.<br>
+                        Podemos usar os dados para enviar comunicações importantes sobre a plataforma, atualizações de serviços, ou informações relevantes sobre doações, sempre com a opção de cancelar o recebimento.
+                    </p> <br>
+                    
+                    <h3>3. Compartilhamento de Informações</h3>
+                
+                        <p>NÃO compartilhamos informações pessoais dos usuários com terceiros.</p> <br>
+                    
+                    <h3>4. Segurança das Informações</h3>
+                    
+                    <p>
+                        Adotamos medidas de segurança apropriadas para proteger os dados pessoais dos usuários contra acesso não autorizado, alteração, divulgação ou destruição. <br>
+                        Isso inclui o uso de criptografia, firewalls e controle de acesso rigoroso aos nossos sistemas.
+                    </p> <br>
+                    
+                    <h3>5. Retenção de Dados</h3>
+                    
+                    <p>
+                        Os dados pessoais dos usuários são mantidos pelo tempo necessário para cumprir as finalidades para as quais foram coletados, de acordo com as exigências legais aplicáveis.<br>
+                        Após o término do uso dos serviços ou a exclusão da conta, os dados serão excluídos ou anonimizados, conforme necessário para fins estatísticos ou de conformidade com obrigações legais.
+                    </p> <br>
+                    
+                    <h3>6. Direitos dos Usuários</h3> 
+                    
+                    <p>
+                        As informações fornecidas no cadastro são utilizadas exclusivamente para viabilizar a operação da plataforma e melhorar a experiência do usuário. <br>
+                        Nenhum dado será vendido ou compartilhado com terceiros sem o consentimento explícito do usuário, exceto conforme exigido por lei.<br>
+                        Os usuários também têm o direito de revogar o consentimento para o uso de seus dados e de solicitar a portabilidade de suas informações.
+                    </p> <br>
+
+                    <h3>7. Disposições Gerais</h3> 
+                    
+                    <p>
+                        Esta Política de Privacidade está sujeita às leis e regulamentos vigentes e quaisquer disputas serão resolvidas de acordo com a legislação aplicável.
+                    </p> <br>
+
+                    <p>Ao utilizar a nossa plataforma de doações de itens, o usuário confirma estar ciente e concordar com os termos desta Política de Privacidade, autorizando o tratamento de seus dados conforme descrito acima.</p>
+            </div>
+            
+        </div>
+
+        <div class="politica">
+            <div class="column">
+                <h2>Políticas de Uso</h2>
+                <ul>
+                    <li><a href="regras.html">Regras de Uso</a></li>
+                    <li><a href="termos.html">Termos e Condições</a></li>
+                    <li><a href="#">Política de Privacidade</a></li>
+                    <li><a href="cookies.html">Política de Cookies</a></li>
+                </ul>
+            </div>
+            <div class="column">
+                <h2>Informações Gerais</h2>
+                <ul>
+                    <li><a href="avisolegal.html">Aviso Legal</a></li>
+                    <li><a href="comofunciona.html">Como Funciona</a></li>
+                    <li><a href="termosdoacao.html">Termos de Doação</a></li>
+                    <li><a href="reembolso.html">Política de Reembolso</a></li>
+                </ul>
+            </div>
+            <div class="column">
+                <h2>Outros Links</h2>
+                <ul>
+                    <li><a href="#">Imprensa</a></li>
+                    <li><a href="#">Contato</a></li>
+                    <li><a href="#">Ajuda</a></li>
+                    <li><a href="#">Parceiros Licenciados</a></li>
+                    <li><a href="#">Convide Amigos</a></li>
+                </ul>
+            </div>
+        </div>
+        <footer>
+            <div class="footer2">
+                <h4>Copyright 2024 DOAEXPRESS, Todos os Direitos Reservados.</h4>
+            </div>
+    </footer>
+    </div>
+
+    <div id="loadingScreen" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background-color:rgba(0,0,0,0.7); color:white; font-size:24px; text-align:center; line-height:100vh; z-index:1000;">
+        Saindo...
+    </div>
+
+    <script>
+        function toggleOverlay() {
+            const overlay = document.getElementById('overlay');
+            overlay.style.display = overlay.style.display === 'block' ? 'none' : 'block';
+            positionOverlay();
+        }
+    
+        function closeOverlay(event) {
+            const overlay = document.getElementById('overlay');
+            if (event.target === overlay) {
+                overlay.style.display = 'none';
+            }
+        }
+    
+        function positionOverlay() {
+            const botton = document.querySelector('.botton');
+            const overlay = document.getElementById('overlay');
+            const rect = botton.getBoundingClientRect();
+            const offsetLeft = -200;
+            overlay.style.top = `${rect.bottom}px`; /* Calcula em relação à viewport */
+            overlay.style.left = `${rect.left + offsetLeft}px`;
+            overlay.style.width = `${rect.width}px`;
+        }
+    
+        window.addEventListener('load', positionOverlay);
+        window.addEventListener('resize', positionOverlay);
+    </script>
+    <script>
+    document.getElementById("logoutLink").addEventListener("click", function(event) {
+        event.preventDefault(); // Previne o comportamento padrão do link
+        
+        // Exibe a tela de carregamento
+        document.getElementById("loadingScreen").style.display = "block";
+        
+        // Redireciona para a página index.html após um tempo
+        setTimeout(function() {
+            window.location.href = "../site/index.html"; // Substitua pelo caminho correto se necessário
+        }, 2000); // Tempo de espera em milissegundos (2000ms = 2s)
+    });
+</script>
+</body>
+</html>

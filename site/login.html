@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+    <style>
+        /* Estilo para a tela de carregamento */
+        #loadingScreen {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            color: white;
+            font-size: 24px;
+            text-align: center;
+            line-height: 100vh;
+            z-index: 1000;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="wrapper">
+            <div class="title"><span>Login</span></div>
+            <form id="loginForm">
+                <div class="row">
+                    <i class="fas fa-user"></i>
+                    <input type="text" name="email" placeholder="Email" required>
+                </div>
+                <div class="row">
+                    <i class="fas fa-lock"></i>
+                    <input type="password" name="senha" placeholder="Senha" required>
+                </div>
+                <div class="pass"><a href="#">Esqueceu a Senha?</a></div>
+                <div class="row button">
+                    <input type="submit" value="Login">
+                </div>
+                <div class="signup-link">Não tem uma conta? <a href="#" id="registerLink">Registre-se agora</a></div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Tela de carregamento -->
+    <div id="loadingScreen">Carregando...</div>
+
+    <script>
+        document.getElementById("loginForm").addEventListener("submit", function(event) {
+            event.preventDefault(); // Previne o envio padrão do formulário
+            document.getElementById("loadingScreen").style.display = "block";
+
+            // Simula o redirecionamento para a página de pagamento
+            setTimeout(function() {
+                window.location.href = "http://localhost/formulairo/telaprincipal/telaprincipal.html"; // Substitua pela URL da página de pagamento
+            }, 2000); // Tempo de espera em milissegundos (2000ms = 2s)
+        });
+
+        // Simula o processo de pagamento e redireciona para a página principal
+        if (window.location.href === "http://localhost/pagina-de-pagamento") {
+            document.getElementById("loadingScreen").style.display = "block";
+            setTimeout(function() {
+                window.location.href = "http://localhost/formulairo/telaprincipal/telaprincipal.html"; // Página final
+            }, 3000); // Tempo de espera (3000ms = 3s)
+        }
+
+        document.getElementById("registerLink").addEventListener("click", function(event) {
+            event.preventDefault();
+            document.getElementById("loadingScreen").style.display = "block";
+
+            setTimeout(function() {
+                window.location.href = "registro.html"; // Substitua pela URL da página de registro
+            }, 2000);
+        });
+    </script>
+</body>
+</html>
